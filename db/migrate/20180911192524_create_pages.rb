@@ -5,7 +5,7 @@ class CreatePages < ActiveRecord::Migration
       t.integer :section_id
       t.text :body
       t.integer :order
-      t.boollean :is_published
+      t.boolean :is_published
       t.boolean :menu_display
 
       t.timestamps null: false
