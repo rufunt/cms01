@@ -1,4 +1,6 @@
 ActiveAdmin.register Page do
+  
+  permit_params :title, :body, :order, :is_published, :section_id, :menu_display
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -11,6 +13,15 @@ ActiveAdmin.register Page do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+
+  index do
+    column :id
+    column :title, :sortable => :title
+    column :section, :sortable => :section
+    column :create_at, :sortable => :create_at
+    column :order
+    actions
+  end
 
   form do |f|
     f.inputs "Details" do
